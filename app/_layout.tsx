@@ -1,10 +1,6 @@
 import { Stack } from "expo-router";
 import React from "react";
 
-export const unstable_settings = {
-  initialRouteName: "loading",
-};
-
 export default function RootLayout() {
   return (
     <Stack>
@@ -18,7 +14,11 @@ export default function RootLayout() {
         options={{
           title: "รายการซื้อของเข้าบ้าน",
           headerStyle: { backgroundColor: "#e6f1ff" },
-          headerTitleStyle: { color: "#23496f", fontWeight: "700", fontSize: 19 },
+          headerTitleStyle: {
+            color: "#23496f",
+            fontWeight: "700",
+            fontSize: 19,
+          },
           headerTintColor: "#2f639f",
           headerShadowVisible: false,
         }}
@@ -27,9 +27,13 @@ export default function RootLayout() {
       <Stack.Screen
         name="profile"
         options={{
-          title: "ตั้งค่าครอบครัว",
+          title: "Settings",
           headerStyle: { backgroundColor: "#e6f1ff" },
-          headerTitleStyle: { color: "#23496f", fontWeight: "700", fontSize: 19 },
+          headerTitleStyle: {
+            color: "#23496f",
+            fontWeight: "700",
+            fontSize: 19,
+          },
           headerTintColor: "#2f639f",
           headerShadowVisible: false,
         }}
@@ -39,7 +43,11 @@ export default function RootLayout() {
         options={{
           title: "ประวัติการซื้อ",
           headerStyle: { backgroundColor: "#e6f1ff" },
-          headerTitleStyle: { color: "#23496f", fontWeight: "700", fontSize: 19 },
+          headerTitleStyle: {
+            color: "#23496f",
+            fontWeight: "700",
+            fontSize: 19,
+          },
           headerTintColor: "#2f639f",
           headerShadowVisible: false,
         }}

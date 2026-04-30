@@ -1,8 +1,8 @@
 import { useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function LoadingScreen() {
+export default function loadingScreen() {
   const router = useRouter();
   const [progress, setProgress] = useState(1);
 
@@ -11,13 +11,12 @@ export default function LoadingScreen() {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          router.replace("/login");
+          router.replace("../login");
           return 100;
         }
         return prev + 1;
       });
     }, 25);
-
     return () => clearInterval(timer);
   }, [router]);
 
@@ -26,9 +25,8 @@ export default function LoadingScreen() {
       <View style={styles.logoCircle}>
         <Text style={styles.logoEmoji}>🏠</Text>
       </View>
-      <Text style={styles.title}>กำลังเตรียมบ้านของเรา</Text>
+      <Text style={styles.title}>กำลังเตรียมการเข้าสู่หน้าหลัก</Text>
       <Text style={styles.subTitle}>กำลังเชื่อมต่อกับระบบ...</Text>
-      <ActivityIndicator size="large" color="#5b95dd" />
       <View style={styles.progressOuter}>
         <View style={[styles.progressInner, { width: `${progress}%` }]} />
       </View>

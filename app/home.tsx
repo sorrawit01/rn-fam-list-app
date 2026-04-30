@@ -11,7 +11,6 @@ import {
 import { supabase } from "../services/supabase";
 
 export default function HomeScreen() {
-  // รับพารามิเตอร์ familyCode ผ่าน Expo Router
   const { familyCode } = useLocalSearchParams<{ familyCode: string }>();
   const router = useRouter();
 
@@ -163,7 +162,7 @@ export default function HomeScreen() {
               </Text>
             ) : (
               <Text style={[styles.diffText, styles.grey]}>
-                ยังไม่มีราคาที่เคยซื้อก่อนหน้า
+                ยังไม่มีราคาที่เคยซื้อก่อนหน้านี้
               </Text>
             )}
           </View>
@@ -196,7 +195,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.logoutPill}
-              onPress={() => router.replace("/loading")}
+              onPress={() => router.replace("../loading")}
             >
               <Text style={styles.logoutBtnText}>ออกจากระบบ</Text>
             </TouchableOpacity>
